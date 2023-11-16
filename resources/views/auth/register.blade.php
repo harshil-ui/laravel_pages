@@ -52,4 +52,12 @@
             <input type="submit" value="Register">
         </div>
     </form>
+
+    <div>
+        <h4>
+            <a href="{{ route('login') }}">
+                Already Have an Account
+            </a>
+        </h4>
+    </div>
 @endsection

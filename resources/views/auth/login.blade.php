@@ -1,15 +1,28 @@
-<h2>Login</h2>
+@extends('layouts.app')
 
-<form action="{{ route('post-login') }}" method="post">
-    @csrf
+@section('title', 'Login')
 
-    <label for="email">Email : </label>
-    <input type="email" name="email" id="email">
+@section('content')
 
-    <br><br>
+    <h2>Login</h2>
 
-    <label for="password">Password :</label>
-    <input type="password" name="password" id="password"> <br><br>
+    <form action="{{ route('post-login') }}" method="post">
+        @csrf
 
-    <input type="submit" value="Login">
-</form>
+        <label for="email">Email : </label>
+        <input type="email" name="email" id="email" required>
+
+        <br><br>
+
+        <label for="password">Password :</label>
+        <input type="password" name="password" id="password" required> <br><br>
+
+        <input type="submit" value="Login">
+
+    </form>
+
+    <div>
+        <h4>Don't have Account <a href="{{ route('register') }}">Create here</a></h4>
+    </div>
+
+@endsection

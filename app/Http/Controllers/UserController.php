@@ -11,11 +11,6 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
-    public function dashboard()
-    {
-        return view('pages.index');
-    }
-
     public function register(UserRequest $request)
     {
         try {
