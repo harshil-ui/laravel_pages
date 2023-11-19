@@ -15,8 +15,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('email')->unique();
-            $table->bigInteger('contactno');
-            $table->string('avatar');
+            $table->bigInteger('contactno')->nullable();
+            $table->string('avatar')->nullable();
             $table->string('password');
             $table->timestamps();
         });

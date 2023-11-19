@@ -23,6 +23,13 @@
             <input type="text" name="editor" id="editor" value="{{ isset($page) ? $page->editor : '' }}" required>
         </div>
 
+        <div>
+            <label for="hobbies">hobbies : </label>
+            <input type="checkbox" name="hobbies" value="eating" id=""> Eating
+            <input type="checkbox" name="hobbies" value="drinking" id=""> Drinking
+            <input type="checkbox" name="hobbies" value="drying"> Drying
+        </div>
+
         <input type="submit" value="{{ isset($page) ? 'Update' : 'Add' }}">
     </form>
 
