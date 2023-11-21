@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Page;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +23,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // a#P7kq3z9l@x
+
+        User::factory()->create([
+            'email' => 'admin@admin.com',
+            'password' => 'a#P7kq3z9l@x'
+        ]);
+        
+        Page::factory(20)->create();
     }
 }

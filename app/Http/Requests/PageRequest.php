@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 class PageRequest extends FormRequest
 {
@@ -12,7 +11,8 @@ class PageRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'slug' => ['required', 'string'],
-            'editor' => ['required', 'string']
+            'editor' => ['required', 'string'],
+            'hobbies' => ['required', 'array']
         ];
     }
 }

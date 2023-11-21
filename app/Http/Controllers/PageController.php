@@ -17,38 +17,19 @@ class PageController extends Controller
         return view('pages.index', ['pages' => $page]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(PageRequest $request)
     {
         try {
-            Page::create($request->validated());
+            $data = $request->validated();
+            $data['hobbies'] = json_encode($data['hobbies']);
+            Page::create($data);
             return redirect()->route('home');
         } catch (\Throwable $th) {
             dd($th);
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Page $page)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Page $page)
     {
         return view('pages.form', ['page' => $page]);
@@ -60,7 +41,10 @@ class PageController extends Controller
     public function update(PageRequest $request, Page $page)
     {
         try {
-            $page->update($request->validated());
+            
+            $data = $request->validated();
+            $data['hobbies'] = json_encode($data['hobbies']);
+            $page->update($data);
             return redirect()->route('home');
         } catch (\Throwable $th) {
             dd($th);

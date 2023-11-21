@@ -23,6 +23,20 @@
             <input type="text" name="editor" id="editor" value="{{ isset($page) ? $page->editor : '' }}" required>
         </div>
 
+        <div>
+            @php
+                $hobbies = json_decode($page['hobbies']);
+            @endphp
+            <label for="hobbies">hobbies :
+                <input type="checkbox" name="hobbies[]" value="eating"
+                    {{ isset($page) && in_array('eating', $hobbies) ? 'checked' : '' }}> Eating
+                <input type="checkbox" name="hobbies[]" value="drinking"
+                    {{ isset($page) && in_array('drinking', $hobbies) ? 'checked' : '' }}> Drinking
+                <input type="checkbox" name="hobbies[]" value="drawing"
+                    {{ isset($page) && in_array('drawing', $hobbies) ? 'checked' : '' }}> drawing
+            </label>
+        </div>
+
         <input type="submit" value="{{ isset($page) ? 'Update' : 'Add' }}">
     </form>
 

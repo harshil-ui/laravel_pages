@@ -7,6 +7,7 @@
                 <th>SR NO.</th>
                 <th>NANE</th>
                 <th>SLUG</th>
+                <th>HOBBIES</th>
                 <th>EDITOR</th>
                 <th>ACTION</th>
             </tr>
@@ -17,6 +18,9 @@
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->slug }}</td>
+                    <td>
+                        {{ implode(" ", json_decode($item['hobbies'])) }}
+                    </td>
                     <td>{{ $item->editor }}</td>
                     <td>
                         <div>

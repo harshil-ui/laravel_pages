@@ -12,5 +12,5 @@ class Page extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
-    public $fillable = ['name', 'slug', 'editor'];
+    public $fillable = ['name', 'slug', 'hobbies', 'editor'];
 }
