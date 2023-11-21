@@ -25,7 +25,7 @@
 
         <div>
             @php
-                $hobbies = json_decode($page['hobbies']);
+                $hobbies = isset($page) ? json_decode($page['hobbies']) : '';
             @endphp
             <label for="hobbies">hobbies :
                 <input type="checkbox" name="hobbies[]" value="eating"
