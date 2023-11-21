@@ -24,10 +24,17 @@
         </div>
 
         <div>
-            <label for="hobbies">hobbies : </label>
-            <input type="checkbox" name="hobbies" value="eating" id=""> Eating
-            <input type="checkbox" name="hobbies" value="drinking" id=""> Drinking
-            <input type="checkbox" name="hobbies" value="drying"> Drying
+            @php
+                $hobbies = json_decode($page['hobbies']);
+            @endphp
+            <label for="hobbies">hobbies :
+                <input type="checkbox" name="hobbies[]" value="eating"
+                    {{ isset($page) && in_array('eating', $hobbies) ? 'checked' : '' }}> Eating
+                <input type="checkbox" name="hobbies[]" value="drinking"
+                    {{ isset($page) && in_array('drinking', $hobbies) ? 'checked' : '' }}> Drinking
+                <input type="checkbox" name="hobbies[]" value="drawing"
+                    {{ isset($page) && in_array('drawing', $hobbies) ? 'checked' : '' }}> drawing
+            </label>
         </div>
 
         <input type="submit" value="{{ isset($page) ? 'Update' : 'Add' }}">
